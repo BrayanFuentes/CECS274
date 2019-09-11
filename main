@@ -1,0 +1,57 @@
+import java.lang.Math;
+public class EndangeredSpecies
+{
+    private String name;
+    private int population;
+    private double growthRate;
+    public EndangeredSpecies()
+    {
+        name = "";
+        population = 0;
+        growthRate = 0;
+    }
+    
+    public EndangeredSpecies(String name, int x, double rate )
+    {
+        this.name = name;
+        population = x; 
+        growthRate = rate;
+        System.out.println(this);
+    }
+    
+    public String getName()
+    {
+        return name;
+    }
+    
+    public int getPopulation()
+    {
+        return population;
+    }
+    
+    public double getRate()
+    {
+        return growthRate;
+    }
+    
+    public String toString()
+    {
+        String s = "Endangered Specie: " + name + "\nCurrent Population: "
+        + population + "\nGrowth Rate: " + growthRate;
+        return s;
+    }
+    
+    /*  calcGrowthRate will need the population and the given years to 
+    calculate the future population.
+    */
+    public static double projectedPop(int pop, int time, int rate)
+    {
+        double base = 2.71828;
+        
+        double projected = pop * Math.pow(base,(rate/100)*time);
+        return projected;
+    }
+    
+    
+    
+}
