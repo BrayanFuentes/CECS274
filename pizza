@@ -1,0 +1,35 @@
+public class Pizza {
+    private String size;
+    private String topping;
+    private String thickness;
+    public Pizza (){
+        size = "";
+        topping = "";
+        thickness = "";
+    }
+    public Pizza (String size,String topping,String thickness){
+        this.size = size;
+        this.topping = topping;
+        this.thickness = thickness;
+        System.out.println(this);
+    }
+
+    public void changeTopping(String topping){
+        this.topping = topping;
+    }
+
+    public void changeSize(String size){
+        this.size = size;
+    }
+
+    public void changeThickness(String thickness){
+        this.thickness = thickness;
+    }
+
+    public String toString()
+    {
+        String s = "You ordered a " + size + " " +topping + " pizza with " + thickness + " crust.\n";
+        return s;
+    }
+
+}
