@@ -44,7 +44,7 @@ public class EndangeredSpecies
     /*  calcGrowthRate will need the population and the given years to 
     calculate the future population.
     */
-    public static double projectedPop(int pop, int time, int rate)
+    public static double projectedPop(int pop, int time, double rate)
     {
         double base = 2.71828;
         
