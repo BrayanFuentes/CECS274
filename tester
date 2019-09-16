@@ -1,36 +1,22 @@
-import  javax.swing.JOptionPane;
-public class Main 
+import java.lang.Math;
+import javax.swing.JOptionPane;
+public class Main
 {
     public static void main(String[] args)
     {
-        boolean loop = true;
-        while(loop == true)
-        {
-            System.out.println("Welcome. Please choose from the following options.");
-            System.out.println("1. Create an endangered specie\n2. Calculate projected population\n3.Quit");       
-            String number = JOptionPane.showInputDialog("Enter the number that corresponds to your choice:");
-            int choice= Integer.parseInt(number);
-            if(choice == 1)
-            {
-                String name = JOptionPane.showInputDialog("Enter name of the endangered specie:");
-                String pop = JOptionPane.showInputDialog("Enter current population:");
-                String rate = JOptionPane.showInputDialog("Enter the growth rate:");
+        String name = JOptionPane.showInputDialog("Enter name of the endangered specie:");
+        String pop = JOptionPane.showInputDialog("Enter current population:");
+        String rate = JOptionPane.showInputDialog("Enter the growth rate(10 =.1):");
                 
-                int population = Integer.parseInt(pop);
-                double growthRate = Double.parseDouble(rate);
-                
-                EndangeredSpecies animal = new EndangeredSpecies(name, population,growthRate);
-                
-            }
-            else
-            {
-                loop = false;
-            }
+        int population = Integer.parseInt(pop);
+        double growthRate = Double.parseDouble(rate);
+          
+        EndangeredSpecies animal = new EndangeredSpecies(name, population,growthRate);
         
-        
-        
-        
-        
-        }
+        String choice = JOptionPane.showInputDialog("Enter the amount of years you would like to see the projected future of the endangered animal");
+        int time = Integer.parseInt(choice);
+        double projected = animal.projectedPop(population,time,growthRate);
+        double projected1 = Math.ceil(projected);
+        System.out.printf("The projected population after %d years is %.2f", time,projected1);
     }
 }
