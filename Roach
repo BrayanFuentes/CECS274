@@ -1,0 +1,44 @@
+public class RoachPopulation
+{
+    private int pop;
+    private String gang;
+    public RoachPopulation()
+    {
+        pop = 10;
+        System.out.println(this);
+    }
+    
+    public RoachPopulation(int num,String name)
+    {
+        pop = num;
+        gang = name;
+        System.out.println(this);
+    }
+    
+    public void breed()
+    {
+        int temp = pop * 2;
+        pop = temp;
+    }
+    
+    public void spray()
+    {
+        double temp = pop *.10;
+        int temp2 = (int)temp;
+        pop = pop - temp2; 
+    }
+    
+    public int getRoaches()
+    {
+        return pop;
+    }
+    
+    public void setGang(String name)
+    {
+        gang = name;
+    }
+    public String ToString()
+    {
+        return "Current Roach Population: " + pop + "\nRoach Gang: " + gang;
+    }
+}
