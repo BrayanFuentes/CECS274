@@ -1,0 +1,9 @@
+public class Roachtester
+{
+    public static void main(String[] args)
+    {
+        //RoachPopulation roach = new RoachPopulation();
+        
+        RoachPopulation roach2 = new RoachPopulation(10000,"Curits' Roaches");
+    }
+}
