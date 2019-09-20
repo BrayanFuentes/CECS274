@@ -37,8 +37,9 @@ public class RoachPopulation
     {
         gang = name;
     }
-    public String ToString()
+    public String toString()
     {
-        return "Current Roach Population: " + pop + "\nRoach Gang: " + gang;
+        String s = "Roach population: " + pop +"\nRoach Gang: " + gang;
+        return s;
     }
 }
