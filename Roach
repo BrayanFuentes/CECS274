@@ -2,44 +2,63 @@ public class RoachPopulation
 {
     private int pop;
     private String gang;
+    //This is an empty constructor with no parameters with an 
     public RoachPopulation()
     {
         pop = 10;
         System.out.println(this);
     }
-    
+    //This is a constructor that takes in 2 parameters
     public RoachPopulation(int num,String name)
     {
         pop = num;
         gang = name;
         System.out.println(this);
     }
-    
+    // this method multiplies the population by 2
     public void breed()
     {
         int temp = pop * 2;
         pop = temp;
     }
-    
+    // this method eliminates 10 percent of the population
     public void spray()
     {
         double temp = pop *.10;
-        int temp2 = (int)temp;
+        int temp2 = (int) temp;
         pop = pop - temp2; 
     }
-    
+    //this method returns the roach population
     public int getRoaches()
     {
         return pop;
     }
-    
+    //this method sets the name of the roach gang
     public void setGang(String name)
     {
         gang = name;
     }
+    //this overrides the toString 
     public String toString()
     {
-        String s = "Roach population: " + pop +"\nRoach Gang: " + gang;
-        return s;
+        String w = "";
+        if(gang.charAt(gang.length()-1) == 's')
+        {
+            String s = "Roach population: " + pop +"\nRoach Gang: " + gang + "' gang";
+            w = s;
+        }
+        else if (gang.charAt(gang.length()-1) != 's')
+        {
+            String s = "Roach population: " + pop +"\nRoach Gang: " + gang + "'s gang";
+            w = s;
+        }
+        else
+        {
+            String s =  "Roach population: " + pop +"\nRoach Gang: No name set ";
+            w = s;
+        }
+        
+        return w;
+        
     }
 }
