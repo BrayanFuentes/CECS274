@@ -2,7 +2,8 @@ public class RoachPopulation
 {
     private int pop;
     private String gang;
-    //This is an empty constructor with no parameters with an 
+    //This is an empty constructor with no parameters with an intial population of 10
+    //It also doesn't have a name set for the roach gang
     public RoachPopulation()
     {
         pop = 10;
@@ -42,21 +43,22 @@ public class RoachPopulation
     public String toString()
     {
         String w = "";
-        if(gang.charAt(gang.length()-1) == 's')
-        {
-            String s = "Roach population: " + pop +"\nRoach Gang: " + gang + "' gang";
-            w = s;
-        }
-        else if (gang.charAt(gang.length()-1) != 's')
-        {
-            String s = "Roach population: " + pop +"\nRoach Gang: " + gang + "'s gang";
-            w = s;
-        }
-        else
+        if(gang == null)
         {
             String s =  "Roach population: " + pop +"\nRoach Gang: No name set ";
             w = s;
         }
+        else if(gang.charAt(gang.length()-1) == 's')
+        {
+            String s = "Roach population: " + pop +"\nRoach Gang: " + gang + "' gang";
+            w = s;
+        }
+        else 
+        {
+            String s = "Roach population: " + pop +"\nRoach Gang: " + gang + "'s gang";
+            w = s;
+        }
+        
         
         return w;
         
