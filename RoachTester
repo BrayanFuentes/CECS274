@@ -2,8 +2,16 @@ public class Roachtester
 {
     public static void main(String[] args)
     {
-        //RoachPopulation roach = new RoachPopulation();
+        RoachPopulation roach = new RoachPopulation();
+        RoachPopulation roach2 = new RoachPopulation(10000,"Curtis");
+        roach.setGang("Brayan");
+        roach.breed();
+        roach.breed();
+        roach2.spray();
+        System.out.println(roach);
+        System.out.println(roach2);
         
-        RoachPopulation roach2 = new RoachPopulation(10000,"Curits' Roaches");
+        
+        
     }
 }
