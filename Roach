@@ -45,17 +45,17 @@ public class RoachPopulation
         String w = "";
         if(gang == null)
         {
-            String s =  "Roach population: " + pop +"\nRoach Gang: No name set ";
+            String s =  "Roach Gang: No name set\nRoach population: " + pop +"\n" ;
             w = s;
         }
         else if(gang.charAt(gang.length()-1) == 's')
         {
-            String s = "Roach population: " + pop +"\nRoach Gang: " + gang + "' gang";
+            String s = "Roach Gang: " + gang + "' gang \nRoach population: " + pop +"\n" ;
             w = s;
         }
         else 
         {
-            String s = "Roach population: " + pop +"\nRoach Gang: " + gang + "'s gang";
+            String s = "Roach Gang: " + gang + "'s gang \nRoach population: " + pop +"\n" ;
             w = s;
         }
         
