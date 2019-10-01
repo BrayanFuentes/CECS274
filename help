@@ -2,7 +2,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.lang.Math;
+
 
 public class BiggestSquare
 {
@@ -52,11 +52,26 @@ public class BiggestSquare
             }
             System.out.println();
         }
-        
-        
-        
+        int all = 0;
+        ArrayList<Integer> x_cords = new ArrayList<Integer>();
+        ArrayList<Integer> y_cords = new ArrayList<Integer>();
+        ArrayList<Integer> distances = new ArrayList<Integer>();
+        for(int c = 0; c < value; c++)
+        {
+            
+            for(int d = 0; d < value; d++)
+            {
+                if (arr[c][d] == 'A')
+                {
+                    x_cords.add(c);
+                    y_cords.add(d);
+                }
+                
+            }
+        }
         scn.close();
     }
-     
+    
+    
         
 }
