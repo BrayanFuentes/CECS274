@@ -12,7 +12,7 @@ public class BiggestSquare
         Scanner scn = new Scanner(inputFile);
         scn.useDelimiter("\n");
         ArrayList<String> inputs = new ArrayList<String>();
-
+        //makes sure that there is a next line to read. Then it takes each line to put them into an arraylist
         while(scn.hasNextLine())
         {
                 String temp = scn.nextLine();
@@ -21,39 +21,42 @@ public class BiggestSquare
         ArrayList<Character> grid = new ArrayList<Character>();
         int value = inputs.size();
         char[][]arr = new char[value][value];
-        
+        //reads the each string in the arraylist and takes each character in all of the strings and puts them in another arraylist
         for(int i = 0; i < value; i++)
         {
             String temp = inputs.get(i);
-            for (int r = 0; i < temp.length(); i++) 
+            for (int r = 0; r < temp.length(); r++) 
             {
                 grid.add(temp.charAt(r));
             }
             
         }
         
-        System.out.println(grid);
+        //the count makes sure that the for loop will read the whole arrayList and put it in the 2 dimsensional array
+        int count = 0;
         for(int a = 0; a < value; a++ )
         {
             for(int b = 0 ; b < value;b++ )
             {
-                int count = a + b;
                 arr[a][b] = grid.get(count);
+                count++;
             }
         }
-        
+        // displays the 2 dimensional array
         for(int c = 0; c < value; c++)
         {
             for(int d = 0; d < value; d++)
             {
-                System.out.println(arr[c][d] + " ");
+                System.out.print(arr[c][d] + " ");
+                
             }
             System.out.println();
         }
-
+        
+        
+        
         scn.close();
     }
      
         
 }
-    
