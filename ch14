@@ -1,0 +1,84 @@
+/**
+   A class for executing binary searches in an array.
+*/
+public class BinarySearcher
+{  
+   /**
+      Finds a value in a range of a sorted array, using the binary
+      search algorithm.
+      @param a the array in which to search
+      @param low the low index of the range
+      @param high the high index of the range
+      @param value the value to find
+      @return the index at which the value occurs, or -1
+      if it does not occur in the array
+   */
+   public static int[] search(int[] a, int low, int high, int value)
+   {  
+	  int size = a.length;
+	  int[] intArray = new int[2]; 
+      if (low <= high)
+      {
+         int mid = (low + high) / 2;
+
+         if (a[mid] == value) 
+         {
+            boolean val1 = false;
+            boolean val2 = false;
+            while(!val1) {
+            	if(a[low] == value)
+            	{
+            		intArray[0] = low;
+            		val1 = true;
+            	}
+            	else
+            	{
+            		low+=1;
+            	}
+            while(!val2) 
+            {
+            	if(a[high] == value) {
+            		intArray[1] = high;
+            		val2 = true;
+            	}
+            	else
+            	{
+            		high -=1;
+            	}
+            }
+         }
+            
+        	 return intArray;
+         }
+         else if (a[mid] < value )
+         {
+            return search(a, mid + 1, high, value);
+         }
+         else
+         {
+            return search(a, low, mid - 1, value);
+         }         
+      }
+      else 
+      {
+    	 intArray[0]=-1;
+    	 if(low>=size)
+    	 {
+    		 intArray[1]=high;
+    	 }
+    	 else if(high<=0)
+    	 {
+    		 intArray[1]=high+1;
+    	 }
+    	 else if(a[high]<value)
+    	 {
+    		 intArray[1]=low;
+    	 }
+    	 else
+    	 {
+    		 intArray[1]=high;
+    	 }
+         return intArray;
+      }
+   }
+}
