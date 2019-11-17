@@ -13,7 +13,7 @@ public class Person {
 	{
 		firstname = name;
 		lastname = name2;
-		System.out.println(this);
+		//System.out.println(this);
 	}
 	
 	public String toString()
