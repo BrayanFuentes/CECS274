@@ -31,4 +31,27 @@ public class Person {
 		return lastname;
 	}
 }
+import java.util.LinkedList;
+
+public class LinkedListQueue {
+	public LinkedList<Person> queue = new LinkedList<Person>();
+	
+	void add(Person person)
+	{
+		queue.add(person);
+	}
+	public int queueSize()
+	{
+		return queue.size();
+	}
+	public Person remove()
+	{
+		queue.removeFirst();
+		return queue.getFirst();
+	}
+	public Person peek()
+	{
+		return queue.getFirst();
+	}
+}
 	
